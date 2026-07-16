@@ -104,5 +104,36 @@ font-weight:bold;
 
 </div>
 
-</body>
+</body><script>
+function register() {
+    let user = prompt("Придумайте логин:");
+    if (!user) return;
+
+    let pass = prompt("Придумайте пароль:");
+    if (!pass) return;
+
+    localStorage.setItem("user", user);
+    localStorage.setItem("pass", pass);
+
+    alert("Регистрация успешна!");
+}
+
+function login() {
+    let user = prompt("Логин:");
+    let pass = prompt("Пароль:");
+
+    if (
+        user === localStorage.getItem("user") &&
+        pass === localStorage.getItem("pass")
+    ) {
+        alert("Добро пожаловать, " + user + "!");
+    } else {
+        alert("Неверный логин или пароль!");
+    }
+}
+</script><button onclick="login()">Авторизоваться</button>
+
+<br><br>
+
+<button onclick="register()">Регистрация</button>
 </html>
