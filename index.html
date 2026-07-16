@@ -84,14 +84,9 @@ font-weight:bold;
 <p>Learn English from A1 to C2</p>
 <p><b>Progress: 0%</b></p>
 
-<button>Login</button>
+<button onclick="login()">Авторизоваться</button>
 
-<br><br>
-
-<button>Register</button>
-
-<br><br>
-<button>Start Learning</button>
+<button onclick="register()">Регистрация</button>
 
 <div class="levels">
 <div class="level">A1</div>
@@ -131,10 +126,6 @@ function login() {
         alert("Неверный логин или пароль!");
     }
 }
-</script><button onclick="login()">Авторизоваться</button>
-
-<br><br>
-
-<button onclick="register()">Регистрация</button>
+</script>
 </body>
 </html>
