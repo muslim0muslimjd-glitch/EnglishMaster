@@ -121,10 +121,27 @@ alert("Неверный логин или пароль");
 }
 
 }
+function startCourse() {
 
-function startCourse(){
+document.querySelector(".card").innerHTML = `
 
-alert("Добро пожаловать в курс A1!\n\nУрок 1 откроется в следующем обновлении.");
+<h1>Урок A1.1</h1>
+
+<h2>Greetings</h2>
+
+<p><b>Hello</b> — Привет</p>
+
+<p><b>Hi</b> — Привет</p>
+
+<p><b>Good morning</b> — Доброе утро</p>
+
+<p><b>Good afternoon</b> — Добрый день</p>
+
+<p><b>Good evening</b> — Добрый вечер</p>
+
+<button onclick="lessonTest()">Пройти тест</button>
+
+`;
 
 }
 
