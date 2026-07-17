@@ -102,18 +102,6 @@ font-weight:bold;
 </div>
 
 <script>
-function register() {
-    let user = prompt("Придумайте логин:");
-    if (!user) return;
-
-    let pass = prompt("Придумайте пароль:");
-    if (!pass) return;
-
-    localStorage.setItem("user", user);
-    localStorage.setItem("pass", pass);
-
-    alert("Регистрация успешна!");
-}
 
 function login() {
     let user = prompt("Логин:");
