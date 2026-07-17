@@ -1,68 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>English Master</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
+margin:0;
+font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#4facfe,#00f2fe);
-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+height:100vh;
 }
 
-.container{
+.card{
 background:white;
-width:90%;
-max-width:380px;
 padding:30px;
 border-radius:20px;
+width:90%;
+max-width:400px;
 text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 h1{
-font-size:32px;
 color:#0077ff;
-margin-bottom:10px;
-}
-
-p{
-color:#666;
-margin-bottom:25px;
 }
 
 button{
 width:100%;
 padding:15px;
+margin-top:10px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 background:#0077ff;
 color:white;
 font-size:18px;
 cursor:pointer;
-transition:.3s;
 }
 
 button:hover{
-background:#005fcc;
+background:#005fd1;
 }
 
 .levels{
-margin-top:25px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:10px;
+margin-top:20px;
 }
 
 .level{
@@ -74,19 +62,17 @@ font-weight:bold;
 </style>
 
 </head>
-
 <body>
 
-<div class="container">
+<div class="card">
 
 <h1>English Master</h1>
 
-<p>Learn English from A1 to C2</p>
-<p><b>Progress: 0%</b></p>
+<p>Изучай английский от A1 до C2</p>
 
-<button onclick="login()">Авторизоваться</button>
+<button onclick="register()">Регистрация</button>
 
-<br><br>
+<button onclick="login()">Войти</button>
 
 <button onclick="startCourse()">Начать обучение</button>
 
@@ -102,23 +88,47 @@ font-weight:bold;
 </div>
 
 <script>
-function login() {
-    let user = prompt("Логин:");
-    let pass = prompt("Пароль:");
 
-    if (
-        user === localStorage.getItem("user") &&
-        pass === localStorage.getItem("pass")
-    ) {
-        alert("Добро пожаловать, " + user + "!");
-    } else {
-        alert("Неверный логин или пароль!");
-    }
+function register(){
+
+let user=prompt("Придумайте логин");
+if(!user)return;
+
+let pass=prompt("Придумайте пароль");
+if(!pass)return;
+
+localStorage.setItem("user",user);
+localStorage.setItem("pass",pass);
+
+alert("Регистрация успешна!");
+
 }
 
-function startCourse() {
-    alert("Начинаем курс A1!");
+function login(){
+
+let user=prompt("Логин");
+let pass=prompt("Пароль");
+
+if(user===localStorage.getItem("user") &&
+pass===localStorage.getItem("pass")){
+
+alert("Добро пожаловать, "+user+"!");
+
+}else{
+
+alert("Неверный логин или пароль");
+
 }
+
+}
+
+function startCourse(){
+
+alert("Добро пожаловать в курс A1!\n\nУрок 1 откроется в следующем обновлении.");
+
+}
+
 </script>
+
 </body>
 </html>
